@@ -1,4 +1,7 @@
 require_relative "./raindrops/drop_generator"
 
-numbers = (1..130).to_a
+total_numbers = 130
+numbers = (1..total_numbers).to_a
+
+puts "Generating #{total_numbers} raindrops...\n\n"
 numbers.each {|x| puts "#{x}: #{DropGenerator.convert(x)}"}
