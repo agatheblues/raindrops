@@ -52,12 +52,8 @@ module DropGenerator
     primes = self.get_prime_division(number)
 
     # Case when no primes at all
-    if primes.empty?
-      return $default_sound
-    end
-
     # Case when no primes belong to the sound prime list
-    if !self.has_eligible_prime?(primes)
+    if primes.empty? || !self.has_eligible_prime?(primes)
       return $default_sound
     end
 
