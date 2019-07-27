@@ -22,7 +22,7 @@ module DropGenerator
     eligible_primes = $sounds.keys
     has_eligible_prime = false
 
-    # Find the first prime that belongs to our prime list, if it exists
+    # Check if the prime contains at least one eligible prime
     primes.each do |prime|
       if eligible_primes.include?(prime[0])
         has_eligible_prime = true
@@ -41,9 +41,7 @@ module DropGenerator
     primes.each do |prime|
       prime_factor, exponent = prime
       sound = self.get_sound(prime_factor)
-      if !sound.nil? 
-        drops << DropStyle.get_style(sound, exponent)
-      end
+      drops << DropStyle.get_style(sound, exponent) if !sound.nil? 
     end
     drops
   end
